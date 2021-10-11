@@ -12,7 +12,7 @@ export default function App() {
 		<Router>
 			<div>
 				<Route exact path="/" component={Main} />
-				<Route exact path="/result/:input" component={Result} />
+				<Route exact path="/result/:result" component={Result} />
 				<Route exact path="/about" component={About} />
 			</div>
 		</Router>
