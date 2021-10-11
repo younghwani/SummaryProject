@@ -1,0 +1,5 @@
+CREATE TABLE summary(
+id INT PRIMARY KEY AUTO_INCREMENT,
+input TEXT NOT NULL,
+output TEXT
+);
