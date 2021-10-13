@@ -11,7 +11,7 @@ import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 
-public class RestAPITask extends AsyncTask<String, Void, String> {
+public class AsyncTaskAPI extends AsyncTask<String, Void, String> {
     private String result;
     protected String mInput;
 
