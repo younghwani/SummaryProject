@@ -8,26 +8,22 @@ import org.json.simple.parser.ParseException;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.Reader;
+import java.util.ArrayList;
 
-public class ReadJsonFile {
-    public static void main(String[] args) throws IOException, ParseException {
-
+public class JsonUtil {
+    public ArrayList<ArrayList<String>> ReadJsonFile(String path) throws IOException, ParseException {
         JSONParser parser = new JSONParser();
-
-        Reader reader = new FileReader("/Users/kyh/Desktop/test.json");
+        Reader reader = new FileReader(path);
         JSONObject jsonObject = (JSONObject) parser.parse(reader);
-
         JSONArray documents = (JSONArray) jsonObject.get("documents");
 
+        ArrayList<ArrayList<String>> result = new ArrayList<ArrayList<String>>();
         for (int i=0; i < documents.size(); i++) {
+            ArrayList<String> temp = new ArrayList<>();
             JSONObject document = (JSONObject) documents.get(i);
-//            System.out.println(document);
-
             // 생성요약
             JSONArray abstractive = (JSONArray) document.get("abstractive");
             String strAbstractive = (String) abstractive.get(0);
-//            System.out.println(strAbstractive);
-
             // 원본
             JSONArray jsonText = (JSONArray) document.get("text");
             jsonText = (JSONArray) jsonText.get(0);
@@ -36,10 +32,18 @@ public class ReadJsonFile {
                 JSONObject text = (JSONObject) jsonText.get(j);
                 String sentence = (String) text.get("sentence");
                 sb.append(sentence + " ");
-//                System.out.println(sentence);
             }
             String originalText = sb.toString();
-//            System.out.println(originalText);
+
+            temp.add(originalText);
+            temp.add(strAbstractive);
+            result.add(temp);
+
+            String progress = String.format("%.0f", (((i + 1) / (double) documents.size()) * 100));
+            System.out.println(progress + "%");
         }
+
+        return result;
     }
+
 }
