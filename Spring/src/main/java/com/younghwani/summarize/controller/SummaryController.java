@@ -18,6 +18,12 @@ public class SummaryController {
     @Autowired
     SummaryService summaryService;
 
+    @GetMapping("/list")
+    public List<Summary> getSummaryList() {
+        List<Summary> summaries = summaryService.findAllSummary();
+        return summaries;
+    }
+
     @PostMapping("/list")
     public List<Summary> summaryList() {
         List<Summary> summaries = summaryService.findAllSummary();
