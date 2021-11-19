@@ -52,6 +52,8 @@ public class JsonUtil {
         try {
             BufferedWriter fw = new BufferedWriter(new FileWriter(path, true));
 
+            fw.write("news" + "\t" + "summary");
+            fw.newLine();
             for (ArrayList<String> doc : docs) {
                 String originalText = (String) doc.get(0);
                 String abstractiveText = (String) doc.get(1);
