@@ -1,9 +1,14 @@
 # Summary Project
-Flask, Spring Boot, ReactJS, IOS, Android
+법원 판결문 뉴스 텍스트 및 법원 주요 판결문 텍스트를 활용한 KoBART 요약 모델 추가 학습
+
+</br>
 
 ## Text Summarization
 - Data : https://aihub.or.kr/aidata/8054 (ai-hub, 문서요약 텍스트 - 법률)
-- 생성 요약
+- 데이터 변환 : [Json->Tsv](https://github.com/younghwani/SummaryProject/blob/master/Spring/src/main/java/com/younghwani/summarize/utils/JsonUtil.java)
+- 요약 모델 : [KoBART Summarization](https://github.com/seujung/KoBART-summarization)
+
+</br>
 
 ## Stack
 - Flask : 요약 모델 구동 (api)
