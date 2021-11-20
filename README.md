@@ -7,6 +7,7 @@
 - Data : https://aihub.or.kr/aidata/8054 (ai-hub, 문서요약 텍스트 - 법률)
 - 데이터 변환 : [Json->Tsv](https://github.com/younghwani/SummaryProject/blob/master/Spring/src/main/java/com/younghwani/summarize/utils/JsonUtil.java)
 - 요약 모델 : [KoBART Summarization](https://github.com/seujung/KoBART-summarization)
+- KoBART 학습 : [Notebook](https://github.com/younghwani/SummaryProject/blob/master/Modeling/kobart_summarize.ipynb)
 
 </br>
 
