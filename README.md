@@ -22,5 +22,6 @@
 
 </br>
 </br>
+
 ## 이전에 진행한 요약 프로젝트
 ### [Text-Rank 활용한 웹 페이지](https://howls-summarization-web.herokuapp.com/)
