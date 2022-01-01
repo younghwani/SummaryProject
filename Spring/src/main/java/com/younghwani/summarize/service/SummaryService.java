@@ -67,4 +67,14 @@ public class SummaryService {
 
         return response;
     }
+
+    @Transactional
+    public String callKobartSummaryAPI(String input) {
+
+        String baseUrl = "http://127.0.0.1:5000/kobartSum?text=" + input;
+        RestTemplate restTemplate = new RestTemplate();
+        String response = restTemplate.getForObject(baseUrl, String.class);
+
+        return response;
+    }
 }

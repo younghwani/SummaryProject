@@ -50,4 +50,17 @@ public class SummaryController {
         return summary;
     }
 
+    @GetMapping("/kobartSum")
+    public Summary kobartSummary(
+            @RequestParam(value = "text") String input) throws Exception {
+
+        // Flask KoBART Summarize
+        String output = summaryService.callKobartSummaryAPI(input);
+
+        Summary summary = new Summary(input, output);
+        summaryService.putSummaryEntity(summary);
+
+        return summary;
+    }
+
 }

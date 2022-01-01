@@ -67,11 +67,11 @@ public class JsonUtil {
         }
     }
 
-    public static void main(String[] args) throws IOException, ParseException {
-        ArrayList<ArrayList<String>> trains = ReadJsonFile("/Users/kyh/Desktop/law/train_original.json");
-        writeTsvFile("/Users/kyh/Desktop/law/train.tsv", trains);
-
-        ArrayList<ArrayList<String>> valids = ReadJsonFile("/Users/kyh/Desktop/law/valid_original.json");
-        writeTsvFile("/Users/kyh/Desktop/law/valid.tsv", valids);
-    }
+//    public static void main(String[] args) throws IOException, ParseException {
+//        ArrayList<ArrayList<String>> trains = ReadJsonFile("/Users/kyh/Desktop/law/train_original.json");
+//        writeTsvFile("/Users/kyh/Desktop/law/train.tsv", trains);
+//
+//        ArrayList<ArrayList<String>> valids = ReadJsonFile("/Users/kyh/Desktop/law/valid_original.json");
+//        writeTsvFile("/Users/kyh/Desktop/law/valid.tsv", valids);
+//    }
 }
