@@ -12,12 +12,12 @@ struct ContentView: View {
     @State var input: String = ""
     @State var output: String = ""
     
-    private var baseUrl: String = "http://127.0.0.1:8080/api/summary?text="
+//    private var baseUrl: String = "http://127.0.0.1:8080/api/summary?text="
     
     private func requestData() {
         print("ContentView - requestData() called")
         
-        var urlComponents = URLComponents(string: "http://127.0.0.1:8080/api/summary?")
+        var urlComponents = URLComponents(string: "http://127.0.0.1:8080/api/kobartSum?")
         let textQuery = URLQueryItem(name: "text", value: input)
         urlComponents?.queryItems?.append(textQuery)
         
