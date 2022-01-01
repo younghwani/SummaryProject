@@ -1,7 +1,7 @@
 # Summary Project
 법원 판결문 뉴스 텍스트 및 법원 주요 판결문 텍스트를 활용한 KoBART 요약 모델 추가 학습
 
-</br>
+<br/>
 
 ## Text Summarization
 - Data : https://aihub.or.kr/aidata/8054 (ai-hub, 문서요약 텍스트 - 법률)
@@ -9,7 +9,23 @@
 - 요약 모델 : [KoBART Summarization](https://github.com/seujung/KoBART-summarization)
 - KoBART 학습 : [Notebook](https://github.com/younghwani/SummaryProject/blob/master/Modeling/kobart_summarize.ipynb)
 
-</br>
+<br/>
+
+## Demo (Web)
+### 텍스트 입력 페이지
+<img width="461" alt="스크린샷 2022-01-01 12 05 47" src="https://user-images.githubusercontent.com/75962307/147843210-957dbdbe-a149-4179-a42a-17ff6895ea09.png">
+
+### 요약 중 메시지
+<img width="228" alt="스크린샷 2022-01-01 12 07 52" src="https://user-images.githubusercontent.com/75962307/147843220-47f3ad1c-898b-407a-94b9-cf7d19ee2e0e.png">
+
+### 한글 요약 결과(예시)
+<img width="894" alt="스크린샷 2022-01-01 12 08 00" src="https://user-images.githubusercontent.com/75962307/147843226-79180995-9b3f-4cc4-b90c-9ad87596c579.png">
+
+### 영어 요약 결과(예시)
+<img width="895" alt="스크린샷 2022-01-01 11 56 25" src="https://user-images.githubusercontent.com/75962307/147843229-4102d540-317a-43dc-8f29-63cb7b6c9a2d.png">
+
+
+<br/>
 
 ## Stack
 - Flask : 요약 모델 구동 (api)
@@ -20,8 +36,8 @@
 - IOS : ios 요약 앱 구현 (api - pod)
 
 
-</br>
-</br>
+<br/>
+<br/>
 
 ## 이전에 진행한 요약 프로젝트
 ### [Text-Rank 활용한 웹 페이지](https://howls-summarization-web.herokuapp.com/)
