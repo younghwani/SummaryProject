@@ -14,11 +14,23 @@ const Main = () => {
 		setInput(value);
 	}
 
-	const handleSubmit = async (event) => {
+	const handleSubmitEn = async (event) => {
 		event.preventDefault();
 		setIsLoading(true);
 		const data = await axios.get(
 			`http://localhost:8080/api/summary?text=${input}`
+		);
+		output = data.data.output;
+		console.log(output);
+		setIsLoading(false);
+		window.location.href = `/result/${output}`;
+	};
+
+	const handleSubmitKor = async (event) => {
+		event.preventDefault();
+		setIsLoading(true);
+		const data = await axios.get(
+			`http://localhost:8080/api/kobartSum?text=${input}`
 		);
 		output = data.data.output;
 		console.log(output);
@@ -39,7 +51,8 @@ const Main = () => {
 				</div>
 			) : (
 				<Container>
-					<Form onSubmit={handleSubmit}>
+					<h2>영어 요약을 위한 텍스트를 입력해주세요.</h2>
+					<Form onSubmit={handleSubmitEn}>
 						<Label for="input">
 							요약할 텍스트를 입력해주세요!!
 						</Label>
@@ -51,6 +64,33 @@ const Main = () => {
 							id="input"
 							onChange={onInputChange}
 							placeholder="Input text.."
+						/>
+						<br />
+						<br />
+						<FormGroup>
+							<Button color="success" type="submit">
+								요약하기
+							</Button>{' '}
+							<Button color="danger" href={`/`}>
+								취소
+							</Button>
+						</FormGroup>
+					</Form>
+					<br />
+					<br />
+					<h2>한글 요약을 위한 텍스트를 입력해주세요.</h2>
+					<Form onSubmit={handleSubmitKor}>
+						<Label for="input">
+							요약할 텍스트를 입력해주세요!!
+						</Label>
+						<br />
+						<Input
+							className="input__text"
+							type="text"
+							name="input"
+							id="input"
+							onChange={onInputChange}
+							placeholder="한글 텍스트를 입력"
 						/>
 						<br />
 						<br />
