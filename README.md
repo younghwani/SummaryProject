@@ -12,18 +12,27 @@
 <br/>
 
 ## Demo (Web)
-### 텍스트 입력 페이지
-<img width="461" alt="스크린샷 2022-01-01 12 05 47" src="https://user-images.githubusercontent.com/75962307/147843210-957dbdbe-a149-4179-a42a-17ff6895ea09.png">
 
-### 요약 중 메시지
+### 텍스트 입력 페이지 및 요약 상태 메시지
+<p align="center">
+<img src="https://user-images.githubusercontent.com/75962307/147843210-957dbdbe-a149-4179-a42a-17ff6895ea09.png" width="30%" height="30%">
 <img width="228" alt="스크린샷 2022-01-01 12 07 52" src="https://user-images.githubusercontent.com/75962307/147843220-47f3ad1c-898b-407a-94b9-cf7d19ee2e0e.png">
+</p>
 
-### 한글 요약 결과(예시)
-<img width="894" alt="스크린샷 2022-01-01 12 08 00" src="https://user-images.githubusercontent.com/75962307/147843226-79180995-9b3f-4cc4-b90c-9ad87596c579.png">
+### 요약 결과(예시)
+<p align="center">
+<img width="80%" height="80%" src="https://user-images.githubusercontent.com/75962307/147843226-79180995-9b3f-4cc4-b90c-9ad87596c579.png">
+<img width="80%" height="80%" src="https://user-images.githubusercontent.com/75962307/147843229-4102d540-317a-43dc-8f29-63cb7b6c9a2d.png">
+</p>
 
-### 영어 요약 결과(예시)
-<img width="895" alt="스크린샷 2022-01-01 11 56 25" src="https://user-images.githubusercontent.com/75962307/147843229-4102d540-317a-43dc-8f29-63cb7b6c9a2d.png">
+<br/>
 
+## Demo (Android)
+<p align="center">
+<img src="https://user-images.githubusercontent.com/75962307/147843378-906c2588-70d9-43b9-83d6-19c0a26ac954.png" width="30%" height="30%">
+<img src="https://user-images.githubusercontent.com/75962307/147843383-4d8e6761-3879-4b9c-90b9-427658339f4f.png" width="30%" height="30%">
+<img src="https://user-images.githubusercontent.com/75962307/147843387-e4c96458-ad54-42b8-8286-ad7299073009.png" width="30%" height="30%">
+</p>
 
 <br/>
 
@@ -34,7 +43,6 @@
 - ReactJS : 웹 구현, admin page (관리자 콘솔) 구현 (api - axios)
 - Android : 안드로이드 요약 앱 구현
 - IOS : ios 요약 앱 구현 (api - pod)
-
 
 <br/>
 <br/>
