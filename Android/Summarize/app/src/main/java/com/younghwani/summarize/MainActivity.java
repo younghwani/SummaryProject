@@ -54,7 +54,8 @@ public class MainActivity extends AppCompatActivity {
                 text.setText("요약 중입니다. 잠시만 기다려주세요!");
                 String input = data.getStringExtra("INPUT");
                 Log.d(TAG,"GET");
-                Call<SummaryItem> getCall = retrofitAPI.get_summary(input);
+//                Call<SummaryItem> getCall = retrofitAPI.get_summary(input);
+                Call<SummaryItem> getCall = retrofitAPI.get_kobart_sum(input);
 //                Log.d("Check", getCall.request().url().toString());
                 getCall.enqueue(new Callback<SummaryItem>() {
                     @Override

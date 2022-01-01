@@ -9,4 +9,7 @@ public interface RetrofitAPI {
 
     @GET("/api/summary")
     Call<SummaryItem> get_summary(@Query("text") String text);
+
+    @GET("/api/kobartSum")
+    Call<SummaryItem> get_kobart_sum(@Query("text") String text);
 }
