@@ -1,7 +1,9 @@
 import axios from 'axios';
 import React, { useState } from 'react';
 import './Main.css';
-import { Container, Form, FormGroup, Input, Label, Button } from 'reactstrap';
+import { Container, Form, FormGroup, Label, Button } from 'reactstrap';
+import Footer from './Footer';
+// import { Input } from 'reactstrap';
 
 const Main = () => {
 	const [input, setInput] = useState('');
@@ -40,11 +42,11 @@ const Main = () => {
 		window.location.href = `/result/${output}`;
 	};
 
-	function handleKeyPress(target) {
-		if (target.charCode === 13) {
-			alert('Enter clicked!!!');
-		}
-	}
+	// function handleKeyPress(target) {
+	// 	if (target.charCode === 13) {
+	// 		alert('Enter clicked!!!');
+	// 	}
+	// }
 
 	function btnClickKo() {
 		if (!isKor) {
@@ -98,9 +100,19 @@ const Main = () => {
 								<Form onSubmit={handleSubmitKor}>
 									<Label for="input">
 										요약할 텍스트를 입력해주세요 (한글만)!!
+										500자 이내로 입력하세요!
 									</Label>
 									<br />
-									<Input
+									<textarea
+										className="input__text"
+										type="text"
+										name="input"
+										id="input"
+										value={input}
+										onChange={onInputChange}
+										placeholder="한글 텍스트를 입력"
+									/>
+									{/* <Input
 										className="input__text"
 										type="text"
 										name="input"
@@ -108,7 +120,7 @@ const Main = () => {
 										onChange={onInputChange}
 										onKeyPress={handleKeyPress}
 										placeholder="한글 텍스트를 입력"
-									/>
+									/> */}
 									<br />
 									<br />
 									<FormGroup className="resultBtn">
@@ -125,17 +137,27 @@ const Main = () => {
 							<div>
 								<Form onSubmit={handleSubmitEn}>
 									<Label for="input">
-										Input text (only english)!!
+										Input text (only english)!! Max length:
+										500!
 									</Label>
 									<br />
-									<Input
+									<textarea
+										className="input__text"
+										type="text"
+										name="input"
+										id="input"
+										value={input}
+										onChange={onInputChange}
+										placeholder="Input text.."
+									/>
+									{/* <Input
 										className="input__text"
 										type="text"
 										name="input"
 										id="input"
 										onChange={onInputChange}
 										placeholder="Input text.."
-									/>
+									/> */}
 									<br />
 									<br />
 									<FormGroup className="resultBtn">
@@ -153,6 +175,7 @@ const Main = () => {
 						<br />
 					</Container>
 				)}
+				<Footer />
 			</div>
 		</div>
 	);
