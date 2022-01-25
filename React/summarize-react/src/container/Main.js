@@ -1,10 +1,12 @@
 import axios from 'axios';
 import React, { useState } from 'react';
+import './Main.css';
 import { Container, Form, FormGroup, Input, Label, Button } from 'reactstrap';
 
 const Main = () => {
 	const [input, setInput] = useState('');
 	const [isLoading, setIsLoading] = useState(false);
+	const [isKor, setIsKor] = useState(true);
 
 	let output = '';
 
@@ -38,73 +40,120 @@ const Main = () => {
 		window.location.href = `/result/${output}`;
 	};
 
+	function handleKeyPress(target) {
+		if (target.charCode === 13) {
+			alert('Enter clicked!!!');
+		}
+	}
+
+	function btnClickKo() {
+		if (!isKor) {
+			setInput('');
+			document.getElementById('input').value = '';
+		}
+		setIsKor(true);
+	}
+	function btnClickEn() {
+		if (isKor) {
+			setInput('');
+			document.getElementById('input').value = '';
+		}
+		setIsKor(false);
+	}
+
 	return (
 		<div className="mainContainer">
-			<div>
-				<h1>Main</h1>
-				<h3>요약 테스트</h3>
-			</div>
-			{isLoading ? (
-				<div>
-					<h2>요약 중입니다.</h2>
-					<p>잠시 후 결과창으로 이동합니다.</p>
+			<video
+				class="bg-video"
+				playsinline="playsinline"
+				autoplay="autoplay"
+				muted="muted"
+				loop="loop"
+				src="https://github.com/younghwani/temp/blob/master/sunrise.mp4?raw=true"
+				type="video/mp4"
+			></video>
+			<div className="contentsContainer">
+				<div className="desc">
+					<h1>KoBART 요약</h1>
+					<h3>지금 사용해보세요!!</h3>
 				</div>
-			) : (
-				<Container>
-					<h2>영어 요약을 위한 텍스트를 입력해주세요.</h2>
-					<Form onSubmit={handleSubmitEn}>
-						<Label for="input">
-							요약할 텍스트를 입력해주세요!!
-						</Label>
+				{isLoading ? (
+					<div className="runningMsg">
+						<h2>요약 중입니다.</h2>
+						<p>잠시 후 결과창으로 이동합니다.</p>
+					</div>
+				) : (
+					<Container className="formContainer">
+						<div class="btns">
+							<button class="btn1" onClick={btnClickKo}>
+								한글 요약
+							</button>
+							<button class="btn2" onClick={btnClickEn}>
+								영어 요약
+							</button>
+						</div>
 						<br />
-						<Input
-							className="input__text"
-							type="text"
-							name="input"
-							id="input"
-							onChange={onInputChange}
-							placeholder="Input text.."
-						/>
+						{isKor ? (
+							<div>
+								<Form onSubmit={handleSubmitKor}>
+									<Label for="input">
+										요약할 텍스트를 입력해주세요 (한글만)!!
+									</Label>
+									<br />
+									<Input
+										className="input__text"
+										type="text"
+										name="input"
+										id="input"
+										onChange={onInputChange}
+										onKeyPress={handleKeyPress}
+										placeholder="한글 텍스트를 입력"
+									/>
+									<br />
+									<br />
+									<FormGroup className="resultBtn">
+										<Button color="success" type="submit">
+											요약하기
+										</Button>{' '}
+										<Button color="danger" href={`/`}>
+											취소
+										</Button>
+									</FormGroup>
+								</Form>
+							</div>
+						) : (
+							<div>
+								<Form onSubmit={handleSubmitEn}>
+									<Label for="input">
+										Input text (only english)!!
+									</Label>
+									<br />
+									<Input
+										className="input__text"
+										type="text"
+										name="input"
+										id="input"
+										onChange={onInputChange}
+										placeholder="Input text.."
+									/>
+									<br />
+									<br />
+									<FormGroup className="resultBtn">
+										<Button color="success" type="submit">
+											요약하기
+										</Button>{' '}
+										<Button color="danger" href={`/`}>
+											취소
+										</Button>
+									</FormGroup>
+								</Form>
+							</div>
+						)}
 						<br />
 						<br />
-						<FormGroup>
-							<Button color="success" type="submit">
-								요약하기
-							</Button>{' '}
-							<Button color="danger" href={`/`}>
-								취소
-							</Button>
-						</FormGroup>
-					</Form>
-					<br />
-					<br />
-					<h2>한글 요약을 위한 텍스트를 입력해주세요.</h2>
-					<Form onSubmit={handleSubmitKor}>
-						<Label for="input">
-							요약할 텍스트를 입력해주세요!!
-						</Label>
-						<br />
-						<Input
-							className="input__text"
-							type="text"
-							name="input"
-							id="input"
-							onChange={onInputChange}
-							placeholder="한글 텍스트를 입력"
-						/>
-						<br />
-						<br />
-						<FormGroup>
-							<Button color="success" type="submit">
-								요약하기
-							</Button>{' '}
-							<Button color="danger" href={`/`}>
-								취소
-							</Button>
-						</FormGroup>
-					</Form>
-				</Container>
-			)}
+					</Container>
+				)}
+			</div>
 		</div>
 	);
 };
