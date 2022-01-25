@@ -11,7 +11,7 @@ export default function App() {
 	return (
 		<Router>
 			<div>
-				<Route path="/" component={Main} />
+				<Route exact path="/" component={Main} />
 				<Route exact path="/result/:result" component={Result} />
 				{/* <Route exact path="/about" component={About} /> */}
 			</div>
