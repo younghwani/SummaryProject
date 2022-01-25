@@ -3,6 +3,7 @@ import React, { useState } from 'react';
 import './Main.css';
 import { Container, Form, FormGroup, Label, Button } from 'reactstrap';
 import Footer from './Footer';
+import Header from './Header';
 // import { Input } from 'reactstrap';
 
 const Main = () => {
@@ -75,10 +76,7 @@ const Main = () => {
 				type="video/mp4"
 			></video>
 			<div className="contentsContainer">
-				<div className="desc">
-					<h1>KoBART 요약</h1>
-					<h3>지금 사용해보세요!!</h3>
-				</div>
+				<Header />
 				{isLoading ? (
 					<div className="runningMsg">
 						<h2>요약 중입니다.</h2>
