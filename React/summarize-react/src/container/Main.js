@@ -54,11 +54,15 @@ const Main = () => {
 	};
 
 	// TODO: 글자수가 일정 범위 이상이면 요약을 하지 못하도록 막도록 구성한다.
-	// function handleKeyPress(target) {
-	// 	if (target.charCode === 13) {
-	// 		alert('Enter clicked!!!');
-	// 	}
-	// }
+	function handleKeyPress(target) {
+		if (input.length > 500 && isKor) {
+			alert('500자 이하로 입력해주세요!');
+		} else if (input.length > 500 && !isKor) {
+			alert('Please reduce the text length to 500 characters or less!');
+		}
+		setInput('');
+		document.getElementById('input').value = '';
+	}
 
 	function btnClickKo() {
 		if (!isKor) {
@@ -125,6 +129,7 @@ const Main = () => {
 										value={input}
 										onChange={onInputChange}
 										placeholder="한글 텍스트를 입력"
+										onKeyPress={handleKeyPress}
 									/>
 									<br />
 									<br />
@@ -141,9 +146,14 @@ const Main = () => {
 						) : (
 							<div>
 								<Form onSubmit={handleSubmitEn}>
-									<Label for="input">
-										Input text (only english)!! Max length:
-										500!
+									<Label for="input" className="label">
+										<div className="label__left">
+											Input text (only english)!! Max
+											length: 500!
+										</div>
+										<div className="label__right">
+											The text length is displayed.
+										</div>
 									</Label>
 									<br />
 									<textarea
@@ -154,6 +164,7 @@ const Main = () => {
 										value={input}
 										onChange={onInputChange}
 										placeholder="Input text.."
+										onKeyPress={handleKeyPress}
 									/>
 									<br />
 									<br />
