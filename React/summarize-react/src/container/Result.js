@@ -15,12 +15,12 @@ const Result = ({ match }) => {
 		<div className="mainContainer">
 			<video
 				className="bg-video"
-				playsinline="playsinline"
-				autoplay="autoplay"
-				muted="muted"
-				loop="loop"
+				playsInline
+				autoPlay
+				muted
+				loop
 				src="https://github.com/younghwani/temp/blob/master/sunrise.mp4?raw=true"
-				type="video/mp4"
+				typeof="video/mp4"
 			></video>
 			<div className="resultContainer">
 				<Header />
