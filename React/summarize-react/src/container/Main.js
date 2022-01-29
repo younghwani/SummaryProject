@@ -16,7 +16,14 @@ const Main = () => {
 		const target = event.target;
 		const value = target.value;
 		setInput(value);
+		updateTextLen();
+	}
+
+	function updateTextLen() {
 		console.log(input.length);
+		document.querySelector(
+			'.label__right'
+		).textContent = `글자 수 : ${input.length}`;
 	}
 
 	const handleSubmitEn = async (event) => {
@@ -103,7 +110,7 @@ const Main = () => {
 											(한글만)!! 500자 이내로 입력하세요!
 										</div>
 										<div className="label__right">
-											글자수 :{' '}
+											텍스트 길이가 표시됩니다.
 										</div>
 									</Label>
 									<br />
