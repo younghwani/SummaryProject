@@ -84,11 +84,11 @@ const Main = () => {
 					</div>
 				) : (
 					<Container className="formContainer">
-						<div class="btns">
-							<button class="btn1" onClick={btnClickKo}>
+						<div className="btns">
+							<button className="btn1" onClick={btnClickKo}>
 								한글 요약
 							</button>
-							<button class="btn2" onClick={btnClickEn}>
+							<button className="btn2" onClick={btnClickEn}>
 								영어 요약
 							</button>
 						</div>
