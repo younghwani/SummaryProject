@@ -14,7 +14,7 @@ const Result = ({ match }) => {
 	return (
 		<div className="mainContainer">
 			<video
-				class="bg-video"
+				className="bg-video"
 				playsinline="playsinline"
 				autoplay="autoplay"
 				muted="muted"
