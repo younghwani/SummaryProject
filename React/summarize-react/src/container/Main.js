@@ -42,6 +42,7 @@ const Main = () => {
 		window.location.href = `/result/${output}`;
 	};
 
+	// TODO: 글자수가 일정 범위 이상이면 요약을 하지 못하도록 막도록 구성한다.
 	// function handleKeyPress(target) {
 	// 	if (target.charCode === 13) {
 	// 		alert('Enter clicked!!!');
