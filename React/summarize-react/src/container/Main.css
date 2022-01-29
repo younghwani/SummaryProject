@@ -65,3 +65,15 @@ video.bg-video {
 	height: 350px;
 	width: 100%;
 }
+
+.label {
+	width: 100%;
+	color: white;
+	display: inline-flex;
+}
+.label .label__left {
+	width: 50%;
+}
+.label .label__right {
+	width: 50%;
+}

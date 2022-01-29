@@ -16,6 +16,7 @@ const Main = () => {
 		const target = event.target;
 		const value = target.value;
 		setInput(value);
+		console.log(input.length);
 	}
 
 	const handleSubmitEn = async (event) => {
@@ -96,9 +97,14 @@ const Main = () => {
 						{isKor ? (
 							<div>
 								<Form onSubmit={handleSubmitKor}>
-									<Label for="input">
-										요약할 텍스트를 입력해주세요 (한글만)!!
-										500자 이내로 입력하세요!
+									<Label for="input" className="label">
+										<div className="label__left">
+											요약할 텍스트를 입력해주세요
+											(한글만)!! 500자 이내로 입력하세요!
+										</div>
+										<div className="label__right">
+											글자수 :{' '}
+										</div>
 									</Label>
 									<br />
 									<textarea
