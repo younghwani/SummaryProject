@@ -53,7 +53,7 @@ const Main = () => {
 		window.location.href = `/result/${output}`;
 	};
 
-	// TODO: 글자수가 일정 범위 이상이면 요약을 하지 못하도록 막도록 구성한다.
+	// TODO: 글자수가 일정 범위 이상이면 요약을 하지 못하도록 막도록 구성한다. - copy&paste 시 500자 이상 등록되는 것을 방지하기
 	function handleKeyPress(target) {
 		if (input.length > 500 && isKor) {
 			alert('500자 이하로 입력해주세요!');
