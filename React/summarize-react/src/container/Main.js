@@ -4,7 +4,6 @@ import './Main.css';
 import { Container, Form, FormGroup, Label, Button } from 'reactstrap';
 import Footer from './Footer';
 import Header from './Header';
-// import { Input } from 'reactstrap';
 
 const Main = () => {
 	const [input, setInput] = useState('');
@@ -110,15 +109,6 @@ const Main = () => {
 										onChange={onInputChange}
 										placeholder="한글 텍스트를 입력"
 									/>
-									{/* <Input
-										className="input__text"
-										type="text"
-										name="input"
-										id="input"
-										onChange={onInputChange}
-										onKeyPress={handleKeyPress}
-										placeholder="한글 텍스트를 입력"
-									/> */}
 									<br />
 									<br />
 									<FormGroup className="resultBtn">
@@ -148,14 +138,6 @@ const Main = () => {
 										onChange={onInputChange}
 										placeholder="Input text.."
 									/>
-									{/* <Input
-										className="input__text"
-										type="text"
-										name="input"
-										id="input"
-										onChange={onInputChange}
-										placeholder="Input text.."
-									/> */}
 									<br />
 									<br />
 									<FormGroup className="resultBtn">
