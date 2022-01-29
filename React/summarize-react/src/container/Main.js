@@ -1,5 +1,5 @@
 import axios from 'axios';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import './Main.css';
 import { Container, Form, FormGroup, Label, Button } from 'reactstrap';
 import Footer from './Footer';
@@ -19,12 +19,15 @@ const Main = () => {
 		updateTextLen();
 	}
 
-	function updateTextLen() {
-		console.log(input.length);
+	const updateTextLen = React.useCallback(() => {
 		document.querySelector(
 			'.label__right'
 		).textContent = `글자 수 : ${input.length}`;
-	}
+	}, [input]);
+
+	useEffect(() => {
+		updateTextLen();
+	}, [updateTextLen]);
 
 	const handleSubmitEn = async (event) => {
 		event.preventDefault();
